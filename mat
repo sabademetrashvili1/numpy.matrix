@@ -1,0 +1,51 @@
+import numpy as np
+
+s = np.array([[1, 4], [2,  3]])
+b = np.array([[5, 4], [4, 5]])
+c = np.array([[1, 5, 4, 6, 5, 7, -5, 7], [5, 6, 2, 4, 23, 21, 32, -6]])
+l = np.array([1.32, 2.34, 5.54, -2.12, -4.43])
+
+
+#multyply functions
+
+d = np.array([[2, 3, 4], [5, 4, 1]])
+e = np.array([[6, 2, 5], [5, 4, 5], [6, 7, 6]])
+
+print(np.dot(s, b))
+print(np.multiply(s, b))
+print(np.matmul(d, e))
+
+#np.histogram
+print(np.histogram(c, bins=5))
+
+#np.where function
+print(np.where((c>2)&(c<10)))
+print(c[np.where((c>2)&(c<10))])
+
+#np.sort functions
+print(np.sort(c))
+
+g = [("Name", 'S10'), ('Age', int), ('height', float), ('weight', float)]
+d = np.array([('saba', 19, 1.70, 65), ('nodo', 22, 1.642, 85), ('dito', 18, 1.78, 110)], dtype=g)
+print(np.sort(d, order=["Age"]))
+
+#floor and ceil function
+print(np.floor(l))
+print(np.ceil(l))
+
+#matrix functions
+k = np.matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(k)
+print("getT", np.matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]]).getT())
+print('getA', np.matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]]).getA())
+print('getH', np.matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]]).getH())
+print(np.matrix('1 2 3; 4 5 6; 7 8 9').getA1())
+print(np.matrix(k).diagonal())
+
+#matrix transpose function
+k = np.matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(k)
+print(np.transpose(k).strides)
+
+a = np.arange(30).reshape((2, 3, 5))
+print(np.transpose(a, (2, 1, 0)))
